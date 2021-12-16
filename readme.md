@@ -10,7 +10,7 @@
 3. python script.py
 
 ### console
-콘솔에 asciiArt로 된 프로젝트 이름이랑 내 이름 찍는 법을 찾았는데 짱 멋있지 않나 생각중이다.    
+콘솔에 asciiArt로 된 프로젝트 이름이랑 내 이름 찍는 법을 찾았는데 짱 멋있다!!    
 ![initial](https://user-images.githubusercontent.com/60867063/146328863-c741b9e1-6e20-469c-8c73-5559ca442cbe.png)
 
 ### how it worked
