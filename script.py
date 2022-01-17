@@ -1,21 +1,17 @@
 from jira import JIRA
 import os
+import json
 
-#your jira url
-JIRA_URL_PREFIX=''
-JIRA_URL=f'https://{JIRA_URL_PREFIX}.atlassian.net'
+with open('data.json') as f:
+    json_object=json.load(f)
 
-#your jira issue prefix
-JIRA_PREFIX=''
-
-#your jira username and api token
-USER_EMAIL=''
-API_TOKEN=''
+JIRA_URL=json_object['jiraUrl']
+JIRA_PREFIX=json_object['jiraPrefix']
+USER_EMAIL=json_object['userEmail']
+API_TOKEN=json_object['apiToken']
 
 #connect jira
 jira=JIRA(server=JIRA_URL,basic_auth=(USER_EMAIL,API_TOKEN))
-
-
 
 '''jira issue CRUD Functions'''
 def createIssue(summary,description,issueType):
@@ -30,6 +26,7 @@ def readIssue(number):
 
 def updateIssueDescription(issue,description):
 	issue.update(notify=False, description=description)
+
 def updateIssueAssign(issue,assignee):
 	jira.assign_issue(issue,assignee)
 
@@ -37,9 +34,8 @@ def deleteIssue(issue):
 	issue.delete()
 
 
-
 '''print proj info'''
-os.system('cat info.txt')
+os.system('cat logo.txt')
 
 '''create example'''
 issue0= createIssue('testSummary','this is description','Story')
